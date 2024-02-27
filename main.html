@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Portfolio</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!--styles -->
+    <style>
+      body {
+        background: url("thethinker.jpg") fixed center/cover no-repeat;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+        font-weight: bold;
+        color: blue;
+      }
+
+      .section-box {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        nav a {
+          margin-bottom: 10px;
+        }
+
+        .section-box {
+          padding: 15px;
+          margin-bottom: 15px;
+        }
+      }
+
+      .contact-link {
+        color: blue;
+        text-decoration: underline;
+      }
+
+      .contact-link:hover {
+        color: darkblue;
+      }
+    </style>
+  </head>
+  <body class="font-sans text-white">
+    <nav class="flex justify-between p-4 bg-gray-800 fixed w-full">
+      <div class="flex items-center">
+        <img src="marc.jpg" class="w-10 h-10 mr-2" />
+        <h1 class="text-xl font-semibold">MARC DACCACHE</h1>
+      </div>
+      <div class="flex space-x-4">
+        <a href="#home" class="hover:text-gray-300">Home</a>
+        <a href="#about" class="hover:text-gray-300">About Me</a>
+        <a href="#projects" class="hover:text-gray-300">Projects</a>
+        <a href="#contact" class="hover:text-gray-300">Contact</a>
+      </div>
+    </nav>
+
+    <div id="home" class="h-screen flex items-center md:ml-10 md:mr-10">
+      <div class="text-center section-box">
+        <h2 class="text-4xl font-bold mb-4 text-blue-500">
+          Welcome to My Portfolio
+        </h2>
+        <p class="text-lg text-black">
+          Marc, a 21-year-old computer science graduate starting a tech
+          internship. Passionate about coding and dreaming of creating
+          innovative apps. Sharing my work on this website as I step into the
+          professional world, excited for more coding adventures and
+          opportunities.
+        </p>
+      </div>
+    </div>
+
+    <section id="about" class="h-screen flex items-center md:ml-10 md:mr-10">
+      <div class="text-center section-box">
+        <h2 class="text-4xl font-bold mb-4 text-blue-500">About Me</h2>
+        <p class="text-lg text-black">
+          Hey, I'm Marc, a 21-year-old computer science enthusiast. Just
+          finished school and started working in tech. I love coding and aspire
+          to create cool apps. When not coding, I'm exploring more about
+          computers. Excited about what's next in the tech world! 👋🏼🚀
+        </p>
+      </div>
+    </section>
+
+    <section
+      id="projects"
+      class="h-screen flex items-center md:ml-10 md:mr-10 text-blue-500"
+    >
+      <div class="text-center section-box">
+        <h2 class="text-4xl font-bold mb-4">Projects</h2>
+        <p class="text-lg text-black">
+          Over the past few months, I've tackled challenging projects, like
+          "SecureChat," a secure messaging app focusing on encryption and
+          privacy. Another project, "SmartInventory," streamlined inventory
+          management for small businesses. Explored creating a "Machine Learning
+          Recommender" system, providing personalized recommendations based on
+          user behavior. These projects expanded my skills and deepened my
+          appreciation for creating real-world solutions.
+        </p>
+      </div>
+    </section>
+
+    <section
+      id="contact"
+      class="h-screen flex items-center md:ml-10 md:mr-10 text-blue-500"
+    >
+      <div class="text-center section-box">
+        <h2 class="text-4xl font-bold mb-4">Contact Me</h2>
+        <p>Feel free to reach out! Contact me through:</p>
+        <p>
+          Email:
+          <a
+            href="mailto:marcdaccache7@gmail.com"
+            class="contact-link"
+            target="_blank"
+            >marcdaccache7@gmail.com</a
+          >
+        </p>
+        <p>
+          LinkedIn:
+          <a
+            href="https://www.linkedin.com/in/yourusername"
+            class="contact-link"
+            target="_blank"
+            >Marc Daccache</a
+          >
+        </p>
+        <p>
+          Facebook:
+          <a href="https://facebook.com" class="contact-link" target="_blank"
+            >Marc Daccache</a
+          >
+        </p>
+
+        <p>
+          GitHub:
+          <a
+            href="https://github.com/yourusername"
+            class="contact-link"
+            target="_blank"
+            >marcDaccache</a
+          >
+        </p>
+        <p>
+          Open to connecting with tech enthusiasts, collaborators, or anyone
+          interested in exciting opportunities. Looking forward to hearing from
+          you!
+        </p>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll('a[href^="#"]');
+        links.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
